@@ -62,7 +62,7 @@ AS       := C:/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/properties.rc$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
 
 
 
@@ -93,6 +93,8 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/properties.rc$(ObjectSuffix): properties.rc
+	$(RcCompilerName) -i "C:/Users/user/Documents/CPPWorkspace/TugasUasPraktikumAlgoritma/properties.rc" $(RcCmpOptions)   $(ObjectSwitch)$(IntermediateDirectory)/properties.rc$(ObjectSuffix) $(RcIncludePath)
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/user/Documents/CPPWorkspace/TugasUasPraktikumAlgoritma/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
