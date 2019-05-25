@@ -1,7 +1,13 @@
 #include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 int main(){
-    std::cout << "Hello World" << std::endl;
+    cout << setw(8);
+    cout << "Kumpulan Latihan & Tugas Akhir Praktikum Algoritma" << endl;
+    cout << "\t++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    
     
     
     return 0;
